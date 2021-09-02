@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 
 engine = create_engine(
-    'postgresql://userone:userOne@localhost:5432/homework3')
+    'postgresql://postgres:user@localhost:5432/homework5')
 
 connection = engine.connect()
 
@@ -59,7 +59,7 @@ Name_in_collection = connection.execute('''
     WHERE p.name LIKE 'Nirvana'
     ''').fetchall()
 
-print(f'Названия сборников, в которых присутствует конкретный исполнитель ("Nirvana"): {Name_in_collection}')
+print(f'Названия сборников, в которых присутствует конкретный исполнитель ("artist_5"): {Name_in_collection}')
 
 # название альбомов, в которых присутствуют исполнители более 1 жанра;
 album_many_styles = connection.execute('''
